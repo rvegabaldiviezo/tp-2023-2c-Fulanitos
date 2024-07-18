@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": "../tp-2023-2c-Fulanitos/kernel"
+		},
+		{
+			"path": "../tp-2023-2c-Fulanitos/memoria"
+		},
+		{
+			"path": "../tp-2023-2c-Fulanitos/cpu"
+		},
+		{
+			"path": "../tp-2023-2c-Fulanitos/shared"
+		},
+		{
+			"path": "../tp-2023-2c-Fulanitos/fileSystem"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"readline.h": "c",
+			"socket.h": "c",
+			"config.h": "c",
+			"pthread.h": "c",
+			"structures.h": "c",
+			"kernel.h": "c",
+			"semaphore.h": "c",
+			"memoria.h": "c",
+			"scheduler.h": "c",
+			"stdint.h": "c",
+			"parser.h": "c",
+			"serialization.h": "c",
+			"queue.h": "c",
+			"stdio.h": "c",
+			"list.h": "c",
+			"unistd.h": "c",
+			"errno.h": "c",
+			"stdlib.h": "c",
+			"limits": "c",
+			"cpu.h": "c"
+		}
+	}
+}

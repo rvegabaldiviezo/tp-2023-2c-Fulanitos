@@ -1,0 +1,106 @@
+{
+  // Utilizar IntelliSense para aprender acerca de los posibles atributos.
+  // Mantenga el puntero para ver las descripciones de los existentes atributos 
+  // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    
+      {
+        "name": "cpu",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/cpu/bin/cpu.out",
+        "args": [ "${workspaceFolder}/config/default/cpu.config" ],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [
+          {"name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/shared/src/shared:${env:LD_LIBRARY_PATH}"}
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build",
+        "miDebuggerPath": "/usr/bin/gdb"
+      } ,
+      {
+        "name": "kernel",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/kernel/bin/kernel.out",
+        "args": [ "${workspaceFolder}/config/default/kernel.config" ],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [
+          {"name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/shared/src/shared:${env:LD_LIBRARY_PATH}"}
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      {
+        "name": "memoria",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/memoria/bin/memoria.out",
+        "args": [ "${workspaceFolder}/config/default/memoria.config" ],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [
+          {"name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/shared/src/shared:${env:LD_LIBRARY_PATH}"}
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      {
+        "name": "fileSystem",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/fileSystem/bin/fileSystem.out",
+        "args": [ "${workspaceFolder}/config/default/fileSystem.config" ],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [
+          {"name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/shared/src/shared:${env:LD_LIBRARY_PATH}"}
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+
+  ]
+}

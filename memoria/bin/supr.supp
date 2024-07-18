@@ -1,0 +1,2 @@
+==44731== Invalid read of size 4
+==44731==    at 0x486E555: _isEnableLevelInLogger (in /usr/lib/libcommons.so)

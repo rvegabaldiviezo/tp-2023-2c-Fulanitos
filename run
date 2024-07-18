@@ -1,0 +1,55 @@
+#!/usr/bin/sudo bash
+
+# ./run [modulo] [config] [program]
+# [modulo]: consola| kernel| cpu| memoria| fileSystem
+# [config]: default| base| deadlock| errores
+# [program]:  program1.txt| program2.txt| program3.txt 
+
+# Verificar si el primer parámetro está presente y no está vacío
+if [ -z "$1" ]; then
+    echo "El primer parámetro (Nombre del modulo) es obligatorio."
+    exit 1
+fi
+
+# Varibles Globales
+CYAN='\033[0;36m'
+RED='\033[0;31m'
+NC='\033[0m'
+PATH_SCRIPT_TO_MODULOS="modules"
+DEFAULT_CONFIG="default"
+DEFAULT_PROGRAM="program1"
+
+# parametro[1](obligatorio): Nombre del modulo a ejecutar 
+MODULO=$1
+
+# parametro[2](opcional): Nombre del tipo de configuraciones a usar 
+CONFIG=${2:-$DEFAULT_CONFIG}
+
+# parametro[3](opcional): Nombre del programa con instrucciones a procesar. Usado por la consola 
+PROGRAM=${3:-$DEFAULT_PROGRAM}
+
+echo -e ""
+echo -e "========================================================"
+echo -e "============ COMIENZO EJECUCION DE ${CYAN}$MODULO${NC} ============="
+echo -e "========================================================"
+echo -e ""
+
+# Compilar el modulo
+#make $MODULO
+
+# Movernos al ejecutable del Modulo
+cd $MODULO/bin
+
+# Seteamos el path desde el modulo hasta los archivos de configuracion
+PATH_CONFIG="../../config" # esta posicionado desde el ejecutable y sale de /build, sale  de /[modulo], sale de /modules, entra al directorio /config 
+PATH_MODULO_TO_CONFIG=$( [ "$CONFIG" != "default" ] && echo "$PATH_CONFIG/testing/$CONFIG" || echo "$PATH_CONFIG/$CONFIG" )
+
+
+# Ejecutar el modulo: ./[modulo] [path_modulo_config] 
+./$MODULO.out "$PATH_MODULO_TO_CONFIG/$MODULO.config"
+
+
+echo -e ""
+echo -e "----------{ EJECUCION DE ${CYAN}$MODULO${NC} FINALIZADA }-----------"
+echo -e ""
+

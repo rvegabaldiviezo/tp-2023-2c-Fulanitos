@@ -1,0 +1,4 @@
+F_OPEN consolas R
+SLEEP 3
+F_CLOSE consolas
+EXIT

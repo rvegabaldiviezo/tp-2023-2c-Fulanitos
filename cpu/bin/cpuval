@@ -1,0 +1,45 @@
+==44432== Memcheck, a memory error detector
+==44432== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==44432== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==44432== Command: ./cpu.out ../../config/default/cpu.config
+==44432== Parent PID: 44202
+==44432== 
+==44432== Invalid read of size 4
+==44432==    at 0x486E555: _isEnableLevelInLogger (in /usr/lib/libcommons.so)
+==44432==    by 0x486E405: _log_write_in_level (in /usr/lib/libcommons.so)
+==44432==    by 0x486E16F: log_info (in /usr/lib/libcommons.so)
+==44432==    by 0x4878845: initialize_logger (in /usr/lib/libshared.so)
+==44432==    by 0x4878781: initialize_setup (in /usr/lib/libshared.so)
+==44432==    by 0x10A5E6: main (cpu.c:6)
+==44432==  Address 0xc is not stack'd, malloc'd or (recently) free'd
+==44432== 
+==44432== 
+==44432== Process terminating with default action of signal 11 (SIGSEGV)
+==44432==  Access not within mapped region at address 0xC
+==44432==    at 0x486E555: _isEnableLevelInLogger (in /usr/lib/libcommons.so)
+==44432==    by 0x486E405: _log_write_in_level (in /usr/lib/libcommons.so)
+==44432==    by 0x486E16F: log_info (in /usr/lib/libcommons.so)
+==44432==    by 0x4878845: initialize_logger (in /usr/lib/libshared.so)
+==44432==    by 0x4878781: initialize_setup (in /usr/lib/libshared.so)
+==44432==    by 0x10A5E6: main (cpu.c:6)
+==44432==  If you believe this happened as a result of a stack
+==44432==  overflow in your program's main thread (unlikely but
+==44432==  possible), you can try to increase the size of the
+==44432==  main thread stack using the --main-stacksize= flag.
+==44432==  The main thread stack size used in this run was 8388608.
+==44432== 
+==44432== HEAP SUMMARY:
+==44432==     in use at exit: 8 bytes in 1 blocks
+==44432==   total heap usage: 5 allocs, 4 frees, 2,008 bytes allocated
+==44432== 
+==44432== LEAK SUMMARY:
+==44432==    definitely lost: 0 bytes in 0 blocks
+==44432==    indirectly lost: 0 bytes in 0 blocks
+==44432==      possibly lost: 0 bytes in 0 blocks
+==44432==    still reachable: 8 bytes in 1 blocks
+==44432==         suppressed: 0 bytes in 0 blocks
+==44432== Reachable blocks (those to which a pointer was found) are not shown.
+==44432== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==44432== 
+==44432== For lists of detected and suppressed errors, rerun with: -s
+==44432== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

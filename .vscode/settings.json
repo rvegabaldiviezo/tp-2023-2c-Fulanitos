@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "stdbool.h": "c",
+        "filesystem.h": "c",
+        "structures.h": "c",
+        "socket.h": "c",
+        "cerrno": "c",
+        "semaphore.h": "c",
+        "list.h": "c",
+        "config.h": "c",
+        ".h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "debug.onTaskErrors": "abort"
+}
